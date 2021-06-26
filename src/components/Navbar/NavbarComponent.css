@@ -1,0 +1,11 @@
+img {
+  height: 30px;
+}
+
+button:hover {
+  font-weight: 500;
+}
+
+li:hover {
+  font-weight: 500;
+}

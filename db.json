@@ -1,0 +1,95 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "burger",
+      "category": "burger",
+      "img": "/images/burger.jpg",
+      "price": 74.99
+    },
+    {
+      "id": 2,
+      "name": "double burger",
+      "category": "burger",
+      "img": "/images/doubleBurger.jpg",
+      "price": 85.99
+    },
+    {
+      "id": 3,
+      "name": "simple burger",
+      "category": "burger",
+      "img": "/images/simpleBurger.jpg",
+      "price": 99.99
+    },
+    {
+      "id": 11,
+      "name": "coca-cola big",
+      "category": "drink",
+      "img": "/images/soda.jpg",
+      "price": 15.99
+    },
+    {
+      "id": 12,
+      "name": "coca-cola medium",
+      "category": "drink",
+      "img": "/images/sodaM.jpg",
+      "price": 10.99
+    },
+    {
+      "id": 21,
+      "name": "ice cream 25 cent",
+      "category": "ice cream",
+      "img": "/images/25CentIceCream.jpg",
+      "price": 24.55
+    },
+    {
+      "id": 22,
+      "name": "mcflurry",
+      "category": "ice cream",
+      "img": "/images/mcFlurry.jpg",
+      "price": 99.99
+    },
+    {
+      "id": 23,
+      "name": "sunday",
+      "category": "ice cream",
+      "img": "/images/sunday.png",
+      "price": 99.99
+    },
+    {
+      "id": 31,
+      "name": "combo 1",
+      "category": "combo",
+      "img": "/images/combo1.jpg",
+      "price": 139.99
+    },
+    {
+      "id": 32,
+      "name": "combo 2",
+      "category": "combo",
+      "img": "/images/combo2.png",
+      "price": 149.99
+    },
+    {
+      "id": 33,
+      "name": "combo 3",
+      "category": "combo",
+      "img": "/images/combo3.jpg",
+      "price": 199.99
+    },
+    {
+      "id": 41,
+      "name": "fries small",
+      "category": "extra",
+      "img": "/images/friesS.jpg",
+      "price": 19.99
+    },
+    {
+      "id": 42,
+      "name": "fries medium",
+      "category": "extra",
+      "img": "/images/friesM.jpg",
+      "price": 29.99
+    }
+  ]
+}
