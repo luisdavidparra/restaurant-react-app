@@ -3,7 +3,7 @@ import { useDataContext } from "../context/DataContext";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col } from "reactstrap";
 
 const ModalProduct = ({ product }) => {
-  const { shoppingCartItems, setShoppingCartItems } = useDataContext();
+  const { setShoppingCartItems } = useDataContext();
   const [amountToAdd, setAmountToAdd] = useState(0);
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);

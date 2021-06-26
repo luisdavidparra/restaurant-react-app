@@ -35,7 +35,6 @@ function App() {
     }, "");
     setIsSearching(true);
     setMenuDataSearch(productsFilter);
-    console.log(menuDataSearch);
   };
 
   const searchByName = (e) => {
@@ -76,7 +75,7 @@ function App() {
             </Route>
           </Switch>
         </div>
-        <div class="footer fixed-bottom text-center bg-dark text-white">Coopyright© McDonald's Company</div>
+        <div className="footer fixed-bottom text-center bg-dark text-white">Coopyright© McDonald's Company</div>
       </Router>
     </DataContextProvider>
   );
