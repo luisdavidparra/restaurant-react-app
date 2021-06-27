@@ -12,11 +12,17 @@ function App() {
   const [menuData, setMenuData] = useState([]);
   const [menuDataSearch, setMenuDataSearch] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [error, setError] = useState();
+  const values = { menuData, menuDataSearch, isSearching, error };
 
   useEffect(() => {
     const getData = async () => {
-      const data = await fetchMenu();
-      setMenuData(data);
+      try {
+        const data = await fetchMenu();
+        setMenuData(data);
+      } catch (error) {
+        setError(error)
+      }
     };
     getData();
   }, []);
@@ -64,7 +70,7 @@ function App() {
               path="/"
               exact
               render={(props) => (
-                <ListOfProducts menuData={menuData} menuDataSearch={menuDataSearch} isSearching={isSearching} />
+                <ListOfProducts values={values} />
               )}
             />
             <Route path="/pay">

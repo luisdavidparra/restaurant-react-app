@@ -1,9 +1,11 @@
 import CardComponent from "./CardComponent";
 
-const LisOfProducts = ({ isSearching, menuData, menuDataSearch }) => {
+const LisOfProducts = ({ values: { isSearching, menuData, menuDataSearch, error } }) => {
   return (
     <div className="row">
-      {!isSearching ? (
+      {error ? (
+        <h4>There was an error</h4>
+      ) : !isSearching ? (
         menuData.map((product) => <CardComponent product={product} key={product.id} />)
       ) : menuDataSearch.length > 0 ? (
         menuDataSearch.map((product) => <CardComponent product={product} key={product.id} />)
