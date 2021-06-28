@@ -24,14 +24,14 @@
     {
       "id": 11,
       "name": "coca-cola big",
-      "category": "drink",
+      "category": "soda",
       "img": "/images/soda.jpg",
       "price": 15.99
     },
     {
       "id": 12,
       "name": "coca-cola medium",
-      "category": "drink",
+      "category": "soda",
       "img": "/images/sodaM.jpg",
       "price": 10.99
     },

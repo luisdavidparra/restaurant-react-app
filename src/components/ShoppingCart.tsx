@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDataContext } from "../context/DataContext";
 
 const ShoppingCart = () => {
@@ -14,8 +14,8 @@ const ShoppingCart = () => {
     );
   }, [shoppingCartItems]);
 
-  const onDelete = (e) => {
-    const data = shoppingCartItems.filter((item) => item.id !== e && item);
+  const onDelete = (id: number) => {
+    const data = shoppingCartItems.filter((item) => item.id !== id && item);
     setShoppingCartItems((shoppingCartItems) => data);
   };
 

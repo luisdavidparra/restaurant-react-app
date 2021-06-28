@@ -5,13 +5,15 @@ import { useDataContext } from "../../context/DataContext";
 import { Navbar, Nav, NavItem, Collapse, NavbarToggler, Form, Input, Col, Row, Container } from "reactstrap";
 import { useState } from "react";
 
-const NavbarComponent = ({ searchByName, searchByCategory }) => {
+const NavbarComponent = ({ searchProduct }) => {
   const { shoppingCartItems } = useDataContext();
   const [isOpen, setIsOpen] = useState(false);
   const [amountOfItems, setAmountOfItems] = useState(0);
 
   useEffect(() => {
-    const newAmount = shoppingCartItems.reduce((total, { amount }) => total + amount, 0);
+    const newAmount = shoppingCartItems.reduce((total, { amount }) => {
+      return total + amount;
+    }, 0);
 
     setAmountOfItems((amountOfItems) => newAmount);
   }, [shoppingCartItems]);
@@ -32,7 +34,7 @@ const NavbarComponent = ({ searchByName, searchByCategory }) => {
                       to="/"
                       className="nav-link text-center active"
                       color="link"
-                      onClick={() => searchByCategory("home")}
+                      onClick={() => searchProduct("home")}
                     >
                       <b>Home</b>
                     </Link>
@@ -42,7 +44,7 @@ const NavbarComponent = ({ searchByName, searchByCategory }) => {
                       to="/"
                       color="link"
                       className="nav-link text-center active"
-                      onClick={() => searchByCategory("burger")}
+                      onClick={() => searchProduct("burger")}
                     >
                       Burger
                     </Link>
@@ -52,7 +54,7 @@ const NavbarComponent = ({ searchByName, searchByCategory }) => {
                       to="/"
                       className="nav-link text-center active"
                       color="link"
-                      onClick={() => searchByCategory("drink")}
+                      onClick={() => searchProduct("soda")}
                     >
                       Soda
                     </Link>
@@ -62,7 +64,7 @@ const NavbarComponent = ({ searchByName, searchByCategory }) => {
                       to="/"
                       className="nav-link text-center active"
                       color="link"
-                      onClick={() => searchByCategory("combo")}
+                      onClick={() => searchProduct("combo")}
                     >
                       Combo
                     </Link>
@@ -72,7 +74,7 @@ const NavbarComponent = ({ searchByName, searchByCategory }) => {
                       to="/"
                       className="nav-link text-center active"
                       color="link"
-                      onClick={() => searchByCategory("extra")}
+                      onClick={() => searchProduct("extra")}
                     >
                       Extra
                     </Link>
@@ -82,7 +84,7 @@ const NavbarComponent = ({ searchByName, searchByCategory }) => {
                       to="/"
                       className="nav-link text-center active"
                       color="link"
-                      onClick={() => searchByCategory("ice cream")}
+                      onClick={() => searchProduct("ice cream")}
                     >
                       Ice Cream
                     </Link>
@@ -95,15 +97,13 @@ const NavbarComponent = ({ searchByName, searchByCategory }) => {
             <Row>
               <Col md="8" lg="9" xs="7" className="align-self-end">
                 <Form>
-                  <Input placeholder="Search by name" onChange={(e) => searchByName(e.target.value)} />
+                  <Input placeholder="Search product" onChange={(e) => searchProduct(e.target.value)} />
                 </Form>
               </Col>
               <Col>
                 <Link className="nav-link text-center active" aria-current="page" to="/pay">
                   <img src="https://image.flaticon.com/icons/png/512/107/107831.png" alt="" />
-                  <span className="badge bg-primary rounded-pill position-absolute top-0 mt-1">
-                    {amountOfItems}
-                  </span>
+                  <span className="badge bg-primary rounded-pill position-absolute top-0 mt-1">{amountOfItems}</span>
                 </Link>
               </Col>
             </Row>

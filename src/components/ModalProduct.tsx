@@ -1,14 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useDataContext } from "../context/DataContext";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col } from "reactstrap";
+import { Button, Modal, ModalBody, ModalFooter, Row, Col } from "reactstrap";
+import { Product } from "../models/Product";
+import { ShoppingCartItem } from "../models/ShoppingCartItem";
 
-const ModalProduct = ({ product }) => {
+const ModalProduct = ({ product }: { product: Product }) => {
   const { setShoppingCartItems } = useDataContext();
-  const [amountToAdd, setAmountToAdd] = useState(0);
-  const [modal, setModal] = useState(false);
+  const [amountToAdd, setAmountToAdd] = useState<number>(0);
+  const [modal, setModal] = useState<boolean>(false);
   const toggle = () => setModal(!modal);
 
-  const modifyAmount = (e) => {
+  const modifyAmount = (e: string) => {
     if (e === "-") {
       if (amountToAdd === 0) {
         return;
@@ -23,7 +25,7 @@ const ModalProduct = ({ product }) => {
   };
 
   const addToCar = () => {
-    const productToSave = { ...product, amount: amountToAdd };
+    const productToSave: ShoppingCartItem = { ...product, amount: amountToAdd };
     setShoppingCartItems((shoppingCartItems) => [...shoppingCartItems, productToSave]);
     setAmountToAdd(0);
   };
@@ -38,9 +40,13 @@ const ModalProduct = ({ product }) => {
         See product
       </Button>
       <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle} className="text-capitalize">
-          {product.name}
-        </ModalHeader>
+        <div className="d-flex justify-content-between m-2 mx-3 align-items-center">
+          <h4 className="text-capitalize m-0">{product.name}</h4>
+          <Button onClick={toggle} color="danger">
+            X
+          </Button>
+        </div>
+        <hr className="m-0" />
         <ModalBody>
           <img src={product.img} className="rounded  card-img-top h-100" alt="..." style={{ objectFit: "cover" }} />
           <div className="text-center">

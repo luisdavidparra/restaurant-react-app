@@ -1,6 +1,14 @@
 import CardComponent from "./CardComponent";
+import { Product } from "../models/Product";
 
-const LisOfProducts = ({ values: { isSearching, menuData, menuDataSearch, error } }) => {
+interface Values {
+  menuData: Product[];
+  menuDataSearch: Product[];
+  isSearching: boolean;
+  error: any;
+}
+
+const LisOfProducts = ({ values: { menuData, menuDataSearch, isSearching, error } }: { values: Values }) => {
   return (
     <div className="row">
       {error ? (

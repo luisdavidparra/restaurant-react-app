@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
 import ModalProduct from "./ModalProduct";
 import { Card, CardImg, CardText, Col, CardFooter, CardBody, CardHeader } from "reactstrap";
+import { Product } from "../models/Product";
 
-const CardComponent = ({ product }) => {
+const CardComponent = ({ product }: { product: Product }) => {
   return (
     <>
       <Col xl="3" lg="4" md="6">
